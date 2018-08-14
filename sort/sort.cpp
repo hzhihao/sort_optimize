@@ -1,6 +1,8 @@
 ﻿// sort.cpp: 定义控制台应用程序的入口点。
 //
 #include "stdafx.h"
+
+using namespace std;
 void swap(int &a, int &b)
 {
 	if (&a == &b)
@@ -44,19 +46,27 @@ void bubble_sort(int data[], int n)  //从小到大排序
 		}
 	}
 }
+
 int main()
 {
-	int arr[8] = { 18,28,3,21,8,9,22,12 };
-	int arr1[8];
+	int arr[8] = { 18,20,3,21,8,9,22,12 };
+	int arr1[8],arr2[8];
 	memcpy(arr1, arr, sizeof(int) * 8);
+	memcpy(arr2, arr, sizeof(int) * 8);
 	quicksort(arr, 0, 7);
 	bubble_sort(arr1, 8);
+	sort_STL(arr2,8);
+
 	for (int i = 0; i < 8; i++)
 		printf("%d ", arr[i]);
 	printf("\n");
 	for (int i = 0; i < 8; i++)
 		printf("%d ", arr1[i]);
 	printf("\n");
+	for (int i = 0; i < 8; i++)
+		printf("%d ", arr2[i]);
+	printf("\n");
+
 	return 0;
 }
 
