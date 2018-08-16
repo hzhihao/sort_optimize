@@ -50,23 +50,31 @@ void bubble_sort(int data[], int n)  //从小到大排序
 int main()
 {
 	int arr[8] = { 18,20,3,21,8,9,22,12 };
-	int arr1[8],arr2[8];
+	//int arr[8] = { 3,8,9,12,18,20,21,22 };
+	int arr1[8],arr2[8],arr3[8];
 	memcpy(arr1, arr, sizeof(int) * 8);
 	memcpy(arr2, arr, sizeof(int) * 8);
-	quicksort(arr, 0, 7);
-	bubble_sort(arr1, 8);
-	sort_STL(arr2,8);
+	memcpy(arr3, arr, sizeof(int) * 8);
+	quicksort(arr, 0, 7);//快速排序
+	bubble_sort(arr1, 8);//冒泡排序
+	sort_STL(arr2,8);//STL排序
+	SortMerge sortmerge;
+	sortmerge.merge_sort_up2down(arr3, 0, 7);// 归并排序(从上往下)
+	//sortmerge.merge_sort_down2up(arr3, 8);// 归并排序(从下往上)
 
+	printf("快速排序：");
 	for (int i = 0; i < 8; i++)
 		printf("%d ", arr[i]);
-	printf("\n");
+	printf("\n冒泡排序：");
 	for (int i = 0; i < 8; i++)
 		printf("%d ", arr1[i]);
-	printf("\n");
+	printf("\n STL排序：");
 	for (int i = 0; i < 8; i++)
 		printf("%d ", arr2[i]);
+	printf("\n归并排序：");
+	for (int i = 0; i < 8; i++)
+		printf("%d ", arr3[i]);
 	printf("\n");
-
 	return 0;
 }
 

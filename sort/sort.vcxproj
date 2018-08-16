@@ -147,10 +147,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="SortMerge.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SortMerge.cpp" />
     <ClCompile Include="sort_STL.cpp" />
     <ClCompile Include="sort.cpp" />
     <ClCompile Include="stdafx.cpp">
